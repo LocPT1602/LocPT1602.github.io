@@ -170,7 +170,7 @@ h4{
     }
 
     .infor, .infor_detail, .tag, .exp {
-        margin-left: 0;
+        margin-left: 10px
         text-align: center;
     }
 
