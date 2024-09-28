@@ -146,51 +146,5 @@ p{
 h4{
   margin:15px 0px;
 }
-/* CSS cho màn hình di động */
-@media screen and (max-width: 600px) {
-  .container {
-      flex-direction: column;
-      padding: 10px;
-  }
-
-  .left_container, .right_container {
-      width: 100%; /* Cả hai khối sẽ chiếm toàn bộ chiều rộng */
-      margin: 0;
-  }
-
-  .left_container {
-      padding: 15px;
-      align-items: center;
-  }
-
-  .picture_person {
-      height: 200px;
-      width: 200px;
-      margin: 10px auto;
-  }
-
-  .infor, .infor_detail, .tag, .exp {
-      margin-left: 0;
-      text-align: center;
-  }
-
-  .icon {
-      justify-content: center;
-  }
-
-  .right_container {
-      margin-top: 20px;
-      padding: 10px;
-  }
-
-  h1, h3 {
-      font-size: lớn hơn;
-  }
-
-  .job_time {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-}
 
 
