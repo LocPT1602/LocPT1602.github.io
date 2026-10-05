@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume_Phan_Thanh_Loc_Java_Backend_Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* ==========================================================================
+       RESET & BASE SETUP (1-PAGE ATS FORMAT - JAVA BACKEND DEVELOPER)
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --text-main: #0f172a;       /* Slate 900 */
+      --text-body: #334155;       /* Slate 700 */
+      --text-muted: #64748b;      /* Slate 500 */
+      --primary: #0f172a;         /* Slate 900 */
+      --accent: #1d4ed8;          /* Blue 700 */
+      --border-color: #cbd5e1;    /* Slate 300 */
+      --border-subtle: #e2e8f0;   /* Slate 200 */
+    }
+
+    body {
+      font-family: var(--font-family);
+      font-size: 9.15pt;
+      line-height: 1.33;
+      color: var(--text-body);
+      background-color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ==========================================================================
+       TOP ACTION BAR
+       ========================================================================== */
+    .action-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #0f172a;
+      color: #fff;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .action-bar-info {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-fresher {
+      background: #2563eb;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: #334155;
+    }
+
+    .btn-secondary:hover {
+      background: #475569;
+    }
+
+    /* ==========================================================================
+       A4 PAGE CONTAINER - STRICT 1-PAGE (210mm x 297mm)
+       ========================================================================== */
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0 40px;
+    }
+
+    .cv-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      padding: 10mm 13mm 9mm 13mm;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ==========================================================================
+       HEADER: NAME & CONTACT (ATS LINEAR SCAN)
+       ========================================================================== */
+    header {
+      text-align: center;
+      margin-bottom: 6px;
+      border-bottom: 1.5px solid var(--primary);
+      padding-bottom: 5px;
+    }
+
+    .candidate-name {
+      font-size: 18.5pt;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      color: var(--primary);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 3px;
+    }
+
+    .candidate-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+      letter-spacing: 0.4px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 4px 10px;
+      font-size: 8.6pt;
+      color: var(--text-body);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .contact-item i {
+      color: var(--text-muted);
+      font-size: 8.5pt;
+    }
+
+    .contact-item a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .contact-separator {
+      color: #94a3b8;
+      font-size: 7.5pt;
+    }
+
+    /* ==========================================================================
+       SECTION STYLES
+       ========================================================================== */
+    section {
+      margin-bottom: 5.5px;
+    }
+
+    .section-heading {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5px;
+      margin-bottom: 4px;
+    }
+
+    /* SUMMARY */
+    .summary-text {
+      font-size: 8.9pt;
+      line-height: 1.33;
+      color: var(--text-body);
+      text-align: justify;
+    }
+
+    .summary-text strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* TECHNICAL SKILLS */
+    .skills-table {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 8.75pt;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      align-items: baseline;
+      line-height: 1.28;
+    }
+
+    .skill-label {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 8.65pt;
+    }
+
+    .skill-values {
+      color: var(--text-body);
+    }
+
+    .skill-values strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* PROJECT EXPERIENCE */
+    .project-item {
+      margin-bottom: 5px;
+    }
+
+    .project-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .project-title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .project-name {
+      font-size: 9.3pt;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .project-links {
+      font-size: 8.2pt;
+      display: inline-flex;
+      gap: 5px;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    .item-date {
+      font-size: 8.4pt;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .project-tech {
+      font-size: 8.3pt;
+      color: var(--text-muted);
+      margin-top: 1px;
+      margin-bottom: 2px;
+    }
+
+    .project-tech strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .bullet-list {
+      list-style-type: disc;
+      margin-left: 14px;
+      font-size: 8.65pt;
+      line-height: 1.29;
+      color: var(--text-body);
+    }
+
+    .bullet-list li {
+      margin-bottom: 1.2px;
+      text-align: justify;
+    }
+
+    .bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullet-list strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* EDUCATION */
+    .edu-item {
+      margin-bottom: 1px;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.1pt;
+    }
+
+    .edu-school {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .edu-major {
+      font-size: 8.65pt;
+      color: var(--text-body);
+      margin-top: 1px;
+    }
+
+    /* ==========================================================================
+       PRINT STYLES (PDF EXPORT 1 EXACT PAGE)
+       ========================================================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 8mm 11mm 8mm 11mm;
+      }
+
+      body {
+        background: #ffffff !important;
+        font-size: 9pt;
+        color: #000000;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .page-wrapper {
+        padding: 0 !important;
+      }
+
+      .cv-page {
+        width: 100% !important;
+        min-height: auto !important;
+        max-height: 100% !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      .candidate-title {
+        color: #1e3a8a !important;
+      }
+
+      .project-links a {
+        color: #1e40af !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top bar preview & actions -->
+  <div class="action-bar">
+    <div class="action-bar-info">
+      <span class="badge-fresher"><i class="fa-solid fa-bolt"></i> Java Backend Positioning</span>
+      <span>Resume chuẩn ATS 1 trang — Vị thế Java Backend Developer</span>
+    </div>
+    <div class="action-buttons">
+      <a href="index.html" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Xem Portfolio</a>
+      <button class="btn" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Lưu / In PDF (1 Trang)</button>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+    <main class="cv-page">
+
+      <!-- HEADER: IDENTITY & CONTACT CHUẨN ATS -->
+      <header>
+        <h1 class="candidate-name">PHAN THANH LỘC</h1>
+        <div class="candidate-title">JAVA BACKEND DEVELOPER | SPRING BOOT · RESTful APIs · DATABASE</div>
+        <div class="contact-bar">
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:0814836606">(+84) 814 836 606</a>
+          </div>
+          <span class="contact-separator">•</span>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:ploc32207@gmail.com">ploc32207@gmail.com</a>
+          </div>
+          <span class="contact-separator">•</span>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Ho Chi Minh City, Vietnam</span>
+          </div>
+          <span class="contact-separator">•</span>
+          <div class="contact-item">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/LocPT1602" target="_blank" rel="noopener">github.com/LocPT1602</a>
+          </div>
+          <span class="contact-separator">•</span>
+          <div class="contact-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/horizon-phan-thanh-l%E1%BB%99c-26380a32b/" target="_blank" rel="noopener">linkedin.com/in/horizon-phan-thanh-loc</a>
+          </div>
+          <span class="contact-separator">•</span>
+          <div class="contact-item">
+            <i class="fa-solid fa-globe"></i>
+            <a href="https://locpt1602.github.io" target="_blank" rel="noopener">locpt1602.github.io</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- PROFESSIONAL SUMMARY -->
+      <section>
+        <h2 class="section-heading">PROFESSIONAL SUMMARY</h2>
+        <p class="summary-text">
+          Dedicated <strong>Java Backend Developer</strong> with a solid foundation in <strong>Object-Oriented Programming (OOP)</strong>, <strong>Data Structures &amp; Algorithms</strong>, and scalable backend system design. Hands-on expertise building enterprise-grade backend services with <strong>Java (Spring Boot, Spring MVC, Spring Data JPA, Spring Security)</strong>, <strong>RESTful APIs</strong>, and database systems (<strong>MySQL, MS SQL Server, MongoDB</strong>). Experienced in designing relational schemas, writing optimized queries/stored procedures, implementing <strong>JWT stateless authentication</strong>, and applying <strong>Clean Architecture &amp; SOLID principles</strong>. Eager to contribute high-quality, robust backend solutions to production-grade engineering teams.
+        </p>
+      </section>
+
+      <!-- TECHNICAL SKILLS -->
+      <section>
+        <h2 class="section-heading">TECHNICAL SKILLS</h2>
+        <div class="skills-table">
+          <div class="skill-row">
+            <span class="skill-label">Backend &amp; Frameworks:</span>
+            <span class="skill-values"><strong>Java Core (8/17/21)</strong>, <strong>Spring Boot</strong>, <strong>Spring MVC</strong>, <strong>Spring Data JPA (Hibernate)</strong>, <strong>Spring Security</strong>, <strong>RESTful API</strong>, WebSocket, Maven/Gradle</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Databases &amp; Storage:</span>
+            <span class="skill-values"><strong>MySQL</strong>, <strong>Microsoft SQL Server</strong>, <strong>MongoDB</strong>, <strong>JDBC Transactions</strong>, Stored Procedures, Indexing, Schema Optimization</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Security &amp; Protocols:</span>
+            <span class="skill-values"><strong>JWT (JSON Web Token)</strong>, RBAC (Role-Based Access Control), CORS, OAuth2 fundamentals, HTTP/HTTPS, Stateless Auth</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Architecture &amp; Design:</span>
+            <span class="skill-values"><strong>OOP</strong>, <strong>SOLID Principles</strong>, MVC Pattern, <strong>Repository / DAO Pattern</strong>, Layered Architecture, Microservices Concepts</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Tools &amp; Practices:</span>
+            <span class="skill-values">Git/GitHub, Postman (API Testing), IntelliJ IDEA, VS Code, Docker (Basics), Linux/Bash Basics, Agile/Scrum, Code Review</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Other Languages &amp; Web:</span>
+            <span class="skill-values">JavaScript (ES6+), React.js, Python (Django), PHP, HTML5/CSS3</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT EXPERIENCE -->
+      <section>
+        <h2 class="section-heading">PROJECT EXPERIENCE</h2>
+
+        <!-- PROJECT 1: SOCIAL MEDIA PLATFORM (BACKEND FOCUS) -->
+        <div class="project-item">
+          <div class="project-header-row">
+            <div class="project-title-group">
+              <span class="project-name">Social Media Platform — RESTful API &amp; Microservice-ready Backend</span>
+              <span class="project-links">
+                [<a href="https://github.com/Phuociter/Social_Media" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>]
+              </span>
+            </div>
+            <span class="item-date">09/2024 – 12/2024 · Team of 4</span>
+          </div>
+          <div class="project-tech">
+            <strong>Backend Stack:</strong> Java 17, Spring Boot, Spring Data JPA, Hibernate, Spring Security, JWT, MySQL, RESTful API, Postman
+          </div>
+          <ul class="bullet-list">
+            <li>Designed and implemented scalable <strong>RESTful APIs</strong> using <strong>Spring Boot &amp; Spring MVC</strong> following 3-layer architecture (Controller - Service - Repository).</li>
+            <li>Built secure authentication &amp; authorization infrastructure with <strong>Spring Security &amp; JWT Filters</strong>, enforcing granular role-based access control (RBAC).</li>
+            <li>Constructed relational database schema on <strong>MySQL</strong> with optimized indexing, managing complex entity relationships (OneToMany, ManyToMany) via <strong>Hibernate/JPA</strong>.</li>
+            <li>Developed core backend modules: post feeds, media metadata handling, real-time like/comment operations, and centralized error handling with <code>@RestControllerAdvice</code>.</li>
+            <li>Documented and thoroughly tested all endpoints with <strong>Postman</strong> collections to validate payload contracts with the React frontend team.</li>
+          </ul>
+        </div>
+
+        <!-- PROJECT 2: RESTAURANT ERP DESKTOP -->
+        <div class="project-item">
+          <div class="project-header-row">
+            <div class="project-title-group">
+              <span class="project-name">Fast Food Restaurant ERP System — Data Persistence &amp; Business Logic</span>
+              <span class="project-links">
+                [<a href="https://github.com/Phuociter/QuanLyThucAnNhanh" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>]
+              </span>
+            </div>
+            <span class="item-date">09/2024 – 11/2024 · Team of 4</span>
+          </div>
+          <div class="project-tech">
+            <strong>Tech Stack:</strong> Java Core, Java Swing, JDBC, MS SQL Server, T-SQL Stored Procedures, DAO Pattern
+          </div>
+          <ul class="bullet-list">
+            <li>Engineered backend business layer and persistence architecture using <strong>DAO/Repository Pattern</strong> and <strong>JDBC</strong> for transaction-heavy POS operations.</li>
+            <li>Authored complex <strong>T-SQL Stored Procedures, Triggers &amp; Transactions</strong> to guarantee ACID compliance during concurrent order checkout and inventory deductions.</li>
+            <li>Developed 4 key sub-systems: product catalog (SKU), order billing &amp; automated invoice generation, employee shift logging, and revenue aggregations.</li>
+          </ul>
+        </div>
+
+        <!-- PROJECT 3: CINEMAX -->
+        <div class="project-item">
+          <div class="project-header-row">
+            <div class="project-title-group">
+              <span class="project-name">Cinemax — Movie Booking &amp; Seat Reservation System</span>
+              <span class="project-links">
+                [<a href="https://github.com/phucnguyen0704/Cinemax" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>]
+              </span>
+            </div>
+            <span class="item-date">01/2026 – 03/2026 · Team of 4</span>
+          </div>
+          <div class="project-tech">
+            <strong>Tech Stack:</strong> PHP (MVC), MySQL, JavaScript, Bootstrap 5, RESTful Endpoints
+          </div>
+          <ul class="bullet-list">
+            <li>Built modular backend routing and controllers adhering strictly to the <strong>MVC architectural pattern</strong>.</li>
+            <li>Implemented seat state locking logic to handle real-time concurrency, preventing double bookings during simultaneous customer checkouts.</li>
+            <li>Developed administrative APIs for cataloging movie schedules, hall capacities, ticket pricing tiers, and revenue analytics.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- EDUCATION -->
+      <section>
+        <h2 class="section-heading">EDUCATION</h2>
+        <div class="edu-item">
+          <div class="edu-header">
+            <span class="edu-school">SAIGON UNIVERSITY (SGU)</span>
+            <span class="item-date">2022 – 2026 / 2027</span>
+          </div>
+          <div class="edu-major">
+            <strong>Bachelor of Science in Software Engineering</strong> · Faculty of Information Technology
+          </div>
+        </div>
+      </section>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <section>
+        <h2 class="section-heading">ADDITIONAL INFORMATION</h2>
+        <div class="skills-table">
+          <div class="skill-row">
+            <span class="skill-label">Technical English:</span>
+            <span class="skill-values">Proficient in reading technical documentation (Spring, Oracle Java docs, RFC specifications), API design contracts, and writing concise Git commits / PRs.</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Core Engineering Mindset:</span>
+            <span class="skill-values">Clean Code advocate, proactive problem-solver, continuous learner of distributed systems &amp; backend scalability, team-first collaboration.</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
